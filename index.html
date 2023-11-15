@@ -22,16 +22,32 @@
     // 🧠 The function buildPeter builds an object of a certain shape and returns it.
     // 🧠 Example of usage:
     // buildPeter() // should return { firstName: "Peter", lastName: "Pan", age: 12 }
+<<<<<<< HEAD
     function buildPeter() {
 
     }
 
+=======
+    function buildPeter(firstName, lastName, age) {
+     let peter = {
+      firstName : 'Peter',
+      lastName : 'Pan',
+      age : 12
+     }
+      return peter
+    }
+    
+>>>>>>> 04182e1 (final saves)
     // 👉 CHALLENGE 2
     // 🧠 The function buildUser takes three arguments and uses them to build an object and return it.
     // 🧠 Example of usage:
     // buildUser("John", "Smith", 30) // should return { firstName: "John", lastName: "Smith", age: 30 }
     function buildUser(firstName, lastName, age) {
+<<<<<<< HEAD
 
+=======
+      return {firstName: firstName, lastName: lastName, age: age}
+>>>>>>> 04182e1 (final saves)
     }
 
     // 👉 CHALLENGE 3
@@ -42,19 +58,50 @@
     // 🧠 Examples of usage:
     // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
     // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
+<<<<<<< HEAD
     function deletePrice() {
 
     }
+=======
+    // product ==> {item: "", price?: ""}
+    function deletePrice(product) {
+      // check if product has a price property
+      // if yes, delete price property
+      // if not, add a new property 
+      let tag = {...product}
+      if (tag.price !== undefined) {
+        delete tag.price
+      } else  {
+        tag.priceless = true
+      }
+     return tag
+    }
+      
+>>>>>>> 04182e1 (final saves)
 
     // 👉 CHALLENGE 4
     // 🧠 The function evenList takes an array as its argument and returns true if the array has an even number of elements, false otherwise.
     // 🧠 Note that the argument of the function is missing, you must write it.
+<<<<<<< HEAD
     // 🧠 Examples of usage:
     // evenList(['a']) // should return false
     // evenList(['a', 'b']) // should return true
     function evenList(arr) {
 
     }
+=======
+    // 🧠 Examples of usage: 
+    // evenList(['a']) // should return false
+    // evenList(['a', 'b']) // should return true
+    function evenList(array) {
+      const total = array.length
+      if (total % 2 === 0) {
+        return true
+      } else {
+        return false
+      }
+   }
+>>>>>>> 04182e1 (final saves)
 
     // 👉 CHALLENGE 5
     // 🧠 The function firstOrLast takes an array as the first argument, and a Boolean as the second.
@@ -62,8 +109,18 @@
     // 🧠 Examples of usage:
     // firstOrLast(['a', 'b'], true) // should return 'a'
     // firstOrLast(['a', 'b'], false) // should return 'b'
+<<<<<<< HEAD
     function firstOrLast() {
 
+=======
+    function firstOrLast(array, boolean) {
+      const solve = {...array} 
+      if (boolean) {
+        return array[0]
+      } else {
+        return array[array.length - 1]
+      }
+>>>>>>> 04182e1 (final saves)
     }
 
     // 👉 CHALLENGE 6
@@ -72,8 +129,17 @@
     // 🧠 Examples of usage:
     // pushElement([], 1) // should return [1]
     // pushElement(['a', 'b'], 'c') // should return ['a', 'b', 'c']
+<<<<<<< HEAD
     function pushElement() {
 
+=======
+    function pushElement(array, anything) {
+      console.log(array)
+      if (anything) {
+        array[array.length] = anything
+        return array
+      }
+>>>>>>> 04182e1 (final saves)
     }
 
     // 👉 CHALLENGE 7
@@ -88,10 +154,24 @@
     // 🧠 At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
     // 🧠 Do not forget to return your rejoined string!
+<<<<<<< HEAD
     function stripX() {
 
     }
 
+=======
+    function stripX(word) {
+      const letters = word.split('')
+      let newword = []
+      for (let i in letters) {
+        if (letters[i] !== 'x') {
+          newword.push(letters[i])      
+        }
+      }
+      newword = newword.join('')
+      return newword
+      } 
+>>>>>>> 04182e1 (final saves)
     // 👉 CHALLENGE 8
     // 🧠 The function stripChar takes a string as its first argument and a character as its second argument.
     // 🧠 The function strips any occurrences of the given character from the string and returns the resulting string.
@@ -100,9 +180,23 @@
     // stripChar("paradox", "a") // should return "prdox"
     // ❗ Important Notes:
     // 🧠 Try to solve this problem without looking at how you solved the previous one.
+<<<<<<< HEAD
     // 🧠 If you need to look, do not copy & paste code. Take a peek and then work from memory!
     function stripChar() {
 
+=======
+    // 🧠 --If you need to look, do not copy & paste code. Take a peek and then work from memory!
+    function stripChar(word, char) {
+      const letters = word.split('')
+      let newword = []
+      for (let i in letters) {
+        if (letters[i] !== char) {
+          newword.push(letters[i])      
+        }
+      }
+      newword = newword.join('')
+      return newword
+>>>>>>> 04182e1 (final saves)
     }
 
     // 👉 CHALLENGE 9
@@ -114,9 +208,22 @@
     // getProps({ lastName: "Smith", age: 35 }) // should return ["lastName"]
     // getProps({ firstName: "Jane", married: false }) // should return ["firstName"]
     // getProps({ name: "Bamby", favFood: "flowers" }) // should return ["name", "favFood"]
+<<<<<<< HEAD
     function getProps() {
 
     }
+=======
+    function getProps(object) {
+      const greg = []
+      for (let property in object) {
+        if (property !== "age" && property !== 'married') {
+            greg.push(property)
+          }
+        }
+         return greg
+      } 
+    
+>>>>>>> 04182e1 (final saves)
 
     // 🧪 TESTS, do not work below this line
     // 🧪 TESTS, do not work below this line
