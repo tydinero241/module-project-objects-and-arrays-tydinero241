@@ -2,274 +2,187 @@
 <html lang="en">
 
 <head>
-  <title>Objects and Arrays</title>
+  <title>Manipulating Arrays Solution</title>
 </head>
 
 <body>
-  <h1>Objects and Arrays</h1>
+  <h1>Manipulating Arrays Solution</h1>
   <p>Please load this file in VSCode and Chrome, and open the Console in Chrome Dev Tools.</p>
   <p>Work through the challenges found inside the script tag in this document,
     until the Console reports all tests passing.</p>
 
   <script>
-    // In CHALLENGEs 1-9 you will flesh out some functions
+    // In CHALLENGES 1-9 you will flesh out some functions.
 
-    // To do this, translate each 🧠 set of instructions into a working function
-    // ❗ Functions are scaffolded for you, but some of them are missing their parameters
-    // ❗ Watch the Guided Project to learn proper debugging technique
+    // To do this, translate each 🧠 set of instructions into a working function.
+    // ❗ Functions are scaffolded for you, but some of them might be missing their parameters.
+    // ❗ Watch the Guided Project to learn proper debugging technique.
+    // ❗ The first challenge is _partially_ done for you:
 
     // 👉 CHALLENGE 1
-    // 🧠 The function buildPeter builds an object of a certain shape and returns it.
-    // 🧠 Example of usage:
-    // buildPeter() // should return { firstName: "Peter", lastName: "Pan", age: 12 }
-<<<<<<< HEAD
-    function buildPeter() {
+    // 🧠 The function sumNumsFor takes an array of supposed numbers and adds them up, returning the total sum.
+    // 🧠 If the function receives an empty array, the returned value ought to be 0.
+    // 🧠 If an element in the array happens to not be a number, it is ignored.
+    // 🧠 However, if the number 13 is encountered, sumNumsFor returns the string "I'm too superstitious!"
+    // 🧠 Examples of usage:
+    // sumNumsFor([1, 2, 3]) // should return 6
+    // sumNumsFor([1, 2, 13]) // should return "I'm too superstitious!"
+    // ❗ Notes:
+    // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the array.
+    // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
+    function sumNumsFor(nums) {
 
     }
 
-=======
-    function buildPeter(firstName, lastName, age) {
-     let peter = {
-      firstName : 'Peter',
-      lastName : 'Pan',
-      age : 12
-     }
-      return peter
-    }
-    
->>>>>>> 04182e1 (final saves)
     // 👉 CHALLENGE 2
-    // 🧠 The function buildUser takes three arguments and uses them to build an object and return it.
+    // 🧠 The function stripVowels takes a string, strips all lowcase vowel letters (a,e,i,o,u) from it and returns it.
     // 🧠 Example of usage:
-    // buildUser("John", "Smith", 30) // should return { firstName: "John", lastName: "Smith", age: 30 }
-    function buildUser(firstName, lastName, age) {
-<<<<<<< HEAD
+    // stripVowels('Lady Gaga') // should return 'Ldy Gg'
+    // ❗ Notes:
+    // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
+    function stripVowels(str) {
 
-=======
-      return {firstName: firstName, lastName: lastName, age: age}
->>>>>>> 04182e1 (final saves)
     }
 
     // 👉 CHALLENGE 3
-    // 🧠 The function deletePrice takes an object as its argument and deletes its "price" property if it exists.
-    // 🧠 If on the other hand there is no "price" property on the object, a "priceless" property with a value of true is added to it.
-    // 🧠 After the modification of the object, it is returned.
-    // 🧠 Note that the argument of the function is missing, you must write it.
+    // 🧠 Reimplement sumNumsFor using a while loop instead of a for loop.
     // 🧠 Examples of usage:
-    // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
-    // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
-<<<<<<< HEAD
-    function deletePrice() {
+    // sumNumsWhile([1, 2, 3]) // should return 6
+    // sumNumsWhile([1, 2, 13]) // should return "I'm too superstitious!"
+    function sumNumsWhile() {
 
     }
-=======
-    // product ==> {item: "", price?: ""}
-    function deletePrice(product) {
-      // check if product has a price property
-      // if yes, delete price property
-      // if not, add a new property 
-      let tag = {...product}
-      if (tag.price !== undefined) {
-        delete tag.price
-      } else  {
-        tag.priceless = true
-      }
-     return tag
-    }
-      
->>>>>>> 04182e1 (final saves)
 
     // 👉 CHALLENGE 4
-    // 🧠 The function evenList takes an array as its argument and returns true if the array has an even number of elements, false otherwise.
-    // 🧠 Note that the argument of the function is missing, you must write it.
-<<<<<<< HEAD
+    // 🧠 The function fightMonsters takes an integer (lifePoints) as its argument, and returns a string.
+    // 🧠 Inside the function there will be several rounds of monster-fighting.
+    // 🧠 We are alive to fight as long as lifePoints is bigger than zero.
+    // 🧠 In the first round, 1 point will be substracted from the initial lifePoints.
+    // 🧠 In the second round, 2 points will be substracted from the remaining lifePoints, and so on.
+    // 🧠 Eventually a string is returned from the function, in the format "You died in round 5".
+    // 🧠 That would be the round when you lost all lifePoints.
     // 🧠 Examples of usage:
-    // evenList(['a']) // should return false
-    // evenList(['a', 'b']) // should return true
-    function evenList(arr) {
+    // fightMonsters(1) // should return "You died in round 1"
+    // fightMonsters(2) // should return "You died in round 2"
+    // fightMonsters(3) // should return "You died in round 2"
+    // fightMonsters(10) // should return "You died in round 4"
+    // ❗ Notes:
+    // 🧠 There are many ways to solve this, but practice using a while loop.
+    // 🧠 Work out using pen and paper how the round number and the lifePoints change after each round.
+    // 🧠 As long as there are lifePoints, decrease lifePoints by round number, and increase round number by one.
+    function fightMonsters() {
 
     }
-=======
-    // 🧠 Examples of usage: 
-    // evenList(['a']) // should return false
-    // evenList(['a', 'b']) // should return true
-    function evenList(array) {
-      const total = array.length
-      if (total % 2 === 0) {
-        return true
-      } else {
-        return false
-      }
-   }
->>>>>>> 04182e1 (final saves)
 
     // 👉 CHALLENGE 5
-    // 🧠 The function firstOrLast takes an array as the first argument, and a Boolean as the second.
-    // 🧠 If the Boolean is true, the function returns the first element of the array, otherwise the last one.
+    // 🧠 The function findEvenNums takes an array of integers as its argument.
+    // 🧠 It returns a new array containing the even numbers found in the original array, in the same order.
     // 🧠 Examples of usage:
-    // firstOrLast(['a', 'b'], true) // should return 'a'
-    // firstOrLast(['a', 'b'], false) // should return 'b'
-<<<<<<< HEAD
-    function firstOrLast() {
+    // findEvenNums([0, 1, 2, 3, 4]) // should return [0, 2, 4]
+    // ❗ Notes:
+    // 🧠 Use any kind of loop you'd like and the push method to populate the array of even numbers.
+    function findEvenNums() {
 
-=======
-    function firstOrLast(array, boolean) {
-      const solve = {...array} 
-      if (boolean) {
-        return array[0]
-      } else {
-        return array[array.length - 1]
-      }
->>>>>>> 04182e1 (final saves)
     }
 
     // 👉 CHALLENGE 6
-    // 🧠 The function pushElement takes an array as the first argument, and any value we wish as the second.
-    // 🧠 The function adds the given value as the last element of the array, and then returns the whole array.
+    // 🧠 The function separateAges takes an array of integers (ages) as its argument.
+    // 🧠 It returns a new array containing two elements, which happen to also be arrays.
+    // 🧠 The first subarray contains the ages under 21, and the second subarray the ages equal or older than 21.
+    // 🧠 Ages in the subarrays should appear in the same order they appeared in the original array.
     // 🧠 Examples of usage:
-    // pushElement([], 1) // should return [1]
-    // pushElement(['a', 'b'], 'c') // should return ['a', 'b', 'c']
-<<<<<<< HEAD
-    function pushElement() {
+    // separateAges([31, 12, 25, 65, 84, 20]) // should return [[12, 20], [31, 25, 65, 84]]
+    function separateAges() {
 
-=======
-    function pushElement(array, anything) {
-      console.log(array)
-      if (anything) {
-        array[array.length] = anything
-        return array
-      }
->>>>>>> 04182e1 (final saves)
     }
 
     // 👉 CHALLENGE 7
-    // 🧠 The function stripX takes a string as its argument.
-    // 🧠 The function strips any occurrences of the letter "x" from the string and returns the resulting string.
+    // 🧠 The function headAndTail takes an array as its argument.
+    // 🧠 It returns an object with two properties: "head" and "tail".
+    // 🧠 The "head" prop contains the first element of the array.
+    // 🧠 The "tail" prop contains an array holding the elements of the array after the first one.
     // 🧠 Examples of usage:
-    // stripX("xenomorph") // should return "enomorph"
-    // stripX("paradox") // should return "parado"
-    // ❗ Important Hints:
-    // 🧠 Inside the function, we should split the given string into an array of characters. Example: "foo".split("") yields ["f", "o", "o"]
-    // 🧠 Do not attempt to manipulate the array of characters. Create an empty result array, and populate it by looping over the characters.
-    // 🧠 At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
-    // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
-    // 🧠 Do not forget to return your rejoined string!
-<<<<<<< HEAD
-    function stripX() {
+    // headAndTail([1, 2, 3]) // should return { head: 1, tail: [2, 3] }
+    function headAndTail() {
 
     }
 
-=======
-    function stripX(word) {
-      const letters = word.split('')
-      let newword = []
-      for (let i in letters) {
-        if (letters[i] !== 'x') {
-          newword.push(letters[i])      
-        }
-      }
-      newword = newword.join('')
-      return newword
-      } 
->>>>>>> 04182e1 (final saves)
     // 👉 CHALLENGE 8
-    // 🧠 The function stripChar takes a string as its first argument and a character as its second argument.
-    // 🧠 The function strips any occurrences of the given character from the string and returns the resulting string.
+    // 🧠 The function nestedLoops takes an array of strings as its argument.
+    // 🧠 It returns a new array of strings which are the same as the original ones except that the vowels are capitalized.
     // 🧠 Examples of usage:
-    // stripChar("xenomorph", "x") // should return "enomorph"
-    // stripChar("paradox", "a") // should return "prdox"
-    // ❗ Important Notes:
-    // 🧠 Try to solve this problem without looking at how you solved the previous one.
-<<<<<<< HEAD
-    // 🧠 If you need to look, do not copy & paste code. Take a peek and then work from memory!
-    function stripChar() {
+    // nestedLoops(['hello', 'goodbye']) // should return ['hEllO', 'gOOdbyE']
+    // ❗ Notes:
+    // 🧠 To capitalize a string you can use its toUpperCase method: "a".toUpperCase() returns "A"
+    function nestedLoops() {
 
-=======
-    // 🧠 --If you need to look, do not copy & paste code. Take a peek and then work from memory!
-    function stripChar(word, char) {
-      const letters = word.split('')
-      let newword = []
-      for (let i in letters) {
-        if (letters[i] !== char) {
-          newword.push(letters[i])      
-        }
-      }
-      newword = newword.join('')
-      return newword
->>>>>>> 04182e1 (final saves)
     }
 
     // 👉 CHALLENGE 9
-    // 🧠 The function getProps takes an object as its argument.
-    // 🧠 The function returns an array containing the property names of the object.
-    // 🧠 However, if the properties "age" or "married" come up, do not include them in the returned array.
-    // 🧠 Avoid using the delete operator in your implementation. We don't wish to alter the object!
+    // 🧠 The function crazyTrimmer takes an array as its argument.
+    // 🧠 If the array has an even number of elements, the function returns it minus its last element.
+    // 🧠 If the number of elements is odd, the function returns the array minus its first and last elements.
     // 🧠 Examples of usage:
-    // getProps({ lastName: "Smith", age: 35 }) // should return ["lastName"]
-    // getProps({ firstName: "Jane", married: false }) // should return ["firstName"]
-    // getProps({ name: "Bamby", favFood: "flowers" }) // should return ["name", "favFood"]
-<<<<<<< HEAD
-    function getProps() {
+    // crazyTrimmer(['a', 'b', 'c']) // should return ['b']
+    // crazyTrimmer(['a', 'b', 'c', 'd']) // should return ['a', 'b', 'c']
+    // ❗ Notes:
+    // 🧠 Practice using pop and slice.
+    // 🧠 Note that pop modifies the original array in place and returns the "popped" element, whereas slice gives us a brand new array.
+    function crazyTrimmer(arr) {
 
     }
-=======
-    function getProps(object) {
-      const greg = []
-      for (let property in object) {
-        if (property !== "age" && property !== 'married') {
-            greg.push(property)
-          }
-        }
-         return greg
-      } 
-    
->>>>>>> 04182e1 (final saves)
 
     // 🧪 TESTS, do not work below this line
     // 🧪 TESTS, do not work below this line
     // 🧪 TESTS, do not work below this line
-    runTests('CHALLENGE 1 - buildPeter', buildPeter, [
-      [[], { firstName: "Peter", lastName: "Pan", age: 12 }],
+    runTests('CHALLENGE 1 - sumNumsFor', sumNumsFor, [
+      [[[1, 2, 3]], 6],
+      [[[]], 0],
+      [[[1, 2, "x", 4]], 7],
+      [[[1, 2, 13, 3]], "I'm too superstitious!"],
     ])
-    runTests('CHALLENGE 2 - buildUser', buildUser, [
-      [["John", "Smith", 30], { firstName: "John", lastName: "Smith", age: 30 }],
-      [["Jane", "Doe", 25], { firstName: "Jane", lastName: "Doe", age: 25 }],
+    runTests('CHALLENGE 2 - stripVowels', stripVowels, [
+      [['aeiou'], ''],
+      [['xyz'], 'xyz'],
+      [['aeiouAEIOU'], 'AEIOU'],
+      [['precaution'], 'prctn'],
     ])
-    runTests('CHALLENGE 3 - deletePrice', deletePrice, [
-      [[{ item: "Tesla Model 3", price: 40000 }], { item: "Tesla Model 3" }],
-      [[{ item: "Friends and family", price: 0 }], { item: "Friends and family" }],
-      [[{ item: "Kobo Libra 2" }], { item: "Kobo Libra 2", priceless: true }],
+    runTests('CHALLENGE 3 - sumNumsWhile', sumNumsWhile, [
+      [[[1, 2, 3]], 6],
+      [[[]], 0],
+      [[[1, 2, "x", 4]], 7],
+      [[[1, 2, 13, 3]], "I'm too superstitious!"],
     ])
-    runTests('CHALLENGE 4 - evenList', evenList, [
-      [[[]], true],
-      [[['a']], false],
-      [[['a', 'b']], true],
+    runTests('CHALLENGE 4 - fightMonsters', fightMonsters, [
+      [[1], 'You died in round 1'],
+      [[2], 'You died in round 2'],
+      [[3], 'You died in round 2'],
+      [[10], 'You died in round 4'],
+      [[100], 'You died in round 14'],
     ])
-    runTests('CHALLENGE 5 - firstOrLast', firstOrLast, [
-      [[['a', 'b'], true], 'a'],
-      [[['a', 'b', 'c'], false], 'c'],
+    runTests('CHALLENGE 5 - findEvenNums', findEvenNums, [
+      [[[]], []],
+      [[[0]], [0]],
+      [[[1, 0, 5, 2, 4]], [0, 2, 4]],
     ])
-    runTests('CHALLENGE 6 - pushElement', pushElement, [
-      [[[], 1], [1]],
-      [[['a', 'b', 'c'], 'd'], ['a', 'b', 'c', 'd']],
+    runTests('CHALLENGE 6 - separateAges', separateAges, [
+      [[[31, 12, 25, 65, 84, 20]], [[12, 20], [31, 25, 65, 84]]],
+      [[[1, 2, 3]], [[1, 2, 3], []]],
+      [[[21, 22, 23]], [[], [21, 22, 23]]],
     ])
-    runTests('CHALLENGE 7 - stripX', stripX, [
-      [['extracorporeal'], 'etracorporeal'],
-      [['counterexample'], 'countereample'],
-      [['xoxo'], 'oo'],
-      [['x'], ''],
+    runTests('CHALLENGE 7 - headAndTail', headAndTail, [
+      [[[1, 2, 3]], { head: 1, tail: [2, 3] }],
+      [[["a", "b", "c"]], { head: "a", tail: ["b", "c"] }],
     ])
-    runTests('CHALLENGE 8 - stripChar', stripChar, [
-      [['extracorporeal', 'x'], 'etracorporeal'],
-      [['counterexample', 'e'], 'countrxampl'],
-      [['xoxo', 'o'], 'xx'],
-      [['x', 'x'], ''],
+    runTests('CHALLENGE 8 - nestedLoops', nestedLoops, [
+      [[['aeiou', 'xyz']], ['AEIOU', 'xyz']],
+      [[['foo', 'bar', 'baz']], ['fOO', 'bAr', 'bAz']],
     ])
-    runTests('CHALLENGE 9 - getProps', getProps, [
-      [[{ lastName: "Smith", age: 35 }], ["lastName"]],
-      [[{ firstName: "Jane", married: false }], ["firstName"]],
-      [[{ firstName: "Jane", married: true, age: 65 }], ["firstName"]],
-      [[{ name: "Bamby", favFood: "flowers" }], ["name", "favFood"]],
+    runTests('CHALLENGE 9 - crazyTrimmer', crazyTrimmer, [
+      [[[1, 2, 3]], [2]],
+      [[[1, 2]], [1]],
+      [[[1, 2, 3, 4]], [1, 2, 3]],
+      [[[1, 2, 3, 4, 5]], [2, 3, 4]],
     ])
     function runTests(testName, func, tests) {
       let results = []
