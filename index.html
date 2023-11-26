@@ -31,8 +31,17 @@
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the array.
     // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
     function sumNumsFor(nums) {
-
-    }
+      let newValue = 0
+      for (let i = 0; i <= nums.length; i++) {
+         if (nums[i] === 13) {
+          return "I'm too superstitious!"
+        } else if (typeof nums[i] === 'number') {
+          newValue += nums[i] 
+          }
+         }
+         return newValue
+      }
+      
 
     // 👉 CHALLENGE 2
     // 🧠 The function stripVowels takes a string, strips all lowcase vowel letters (a,e,i,o,u) from it and returns it.
@@ -41,17 +50,41 @@
     // ❗ Notes:
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
     function stripVowels(str) {
-
+      let newWord = ''
+      let vowels = ['a','e','i','o','u']
+      for (let i = 0; i < str.length; i++) {
+        let current = str[i]
+        let isVowel = false
+        for (let j = 0; j < vowels.length; j++) {
+        if (current === vowels[j]) {
+        isVowel = true
+        break
+       }
+      }
+      if (!isVowel) {
+        newWord += current
+      }
     }
-
+    return newWord
+  }
     // 👉 CHALLENGE 3
     // 🧠 Reimplement sumNumsFor using a while loop instead of a for loop.
     // 🧠 Examples of usage:
     // sumNumsWhile([1, 2, 3]) // should return 6
     // sumNumsWhile([1, 2, 13]) // should return "I'm too superstitious!"
-    function sumNumsWhile() {
-
-    }
+    function sumNumsWhile(arr) { 
+      let sum = 0
+      let index = 0
+      while (index <= arr.length) {
+        if (arr[index] === 13) {
+          return "I'm too superstitious!"
+        } else if (typeof arr[index] === 'number') {
+          sum += arr[index] 
+          }
+         }
+         return sum
+      }
+  
 
     // 👉 CHALLENGE 4
     // 🧠 The function fightMonsters takes an integer (lifePoints) as its argument, and returns a string.
